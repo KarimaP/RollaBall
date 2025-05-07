@@ -20,5 +20,11 @@ public class EnemyMovement : MonoBehaviour
         {
             navMeshAgent.SetDestination(player.position);
         }
+
+        if (navMeshAgent.hasPath)
+            Debug.Log("Pfad vorhanden");
+        else
+            Debug.Log("Kein Pfad gefunden");
+
     }
 }

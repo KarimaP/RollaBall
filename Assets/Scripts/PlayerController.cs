@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     //private variable type Rigidbody called rb
     // private = not accessible from inspector or other scripts
-    public float speed = 10.0f;
+    public float speed = 25.0f;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     private Rigidbody rb;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
         void FixedUpdate()
         {
-            Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+            Vector3 movement = new Vector3(movementX, 0.5f, movementY);
             rb.AddForce(movement * speed);
 
         
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         void SetCountText()
         {
             countText.text = "Count: " + count.ToString();
-            if (count >= 7)
+            if (count >= 8)
             {
                 winTextObject.SetActive(true);
             }
